@@ -53,3 +53,26 @@ exports.getAllBook = async (req, res) => {
     });
   }
 };
+
+exports.getBookDetail = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await Book.findOne({ _id: id })
+      .populate({ path: "reviews" })
+      .populate({
+        path: "reviews",
+        populate: { path: "user", select: "name" },
+      });
+
+    return res.status(400).json({
+      success: true,
+      message: "Book details fetched successfully.",
+      data: book,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal server Error",
+    });
+  }
+};
