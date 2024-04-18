@@ -2,8 +2,8 @@ const Book = require("../models/book.model");
 
 exports.addBook = async (req, res) => {
   try {
-    const { title, author, genre } = req.body;
-    if (!title || !author || !genre) {
+    const { title, author, genre, description } = req.body;
+    if (!title || !author || !genre || !description) {
       return res.status(400).json({
         success: false,
         message: "All fields are required.",
@@ -14,6 +14,7 @@ exports.addBook = async (req, res) => {
       title,
       author,
       genre,
+      description,
       reviews: [],
     });
 

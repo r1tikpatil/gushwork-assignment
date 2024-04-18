@@ -1,4 +1,5 @@
 const Review = require("../models/review.model");
+const Book = require("../models/book.model");
 
 exports.addReview = async (req, res) => {
   try {
@@ -11,12 +12,23 @@ exports.addReview = async (req, res) => {
       });
     }
 
-    await Review.create({
+    const book = await Book.findOne({ _id: bookId });
+
+    if (!book) {
+      return res.status(400).json({
+        success: false,
+        message: "Book must be exist.",
+      });
+    }
+
+    const review = await Review.create({
       user: loggedInUser._id,
       rating,
       comment,
       bookId,
     });
+    book.reviews.push(review._id);
+    await book.save();
 
     return res.status(400).json({
       success: true,
@@ -34,7 +46,9 @@ exports.getAllReviews = async (req, res) => {
   try {
     const { id } = req.params;
 
-    if (!id) {
+    const book = await Book.findOne({ _id: id });
+
+    if (!book) {
       return res.status(400).json({
         success: false,
         message: "Book must be exist.",
