@@ -29,3 +29,27 @@ exports.addBook = async (req, res) => {
     });
   }
 };
+
+exports.getAllBook = async (req, res) => {
+  try {
+    const books = await Book.find()
+      .populate({ path: "reviews" })
+      .populate({
+        path: "reviews",
+        populate: { path: "user", select: "name" },
+      });
+
+    return res.status(400).json({
+      success: true,
+      message: "Books fetched successfully.",
+      data: {
+        books,
+      },
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal server Error",
+    });
+  }
+};
