@@ -1,4 +1,4 @@
-const Url = `http://localhost:8080`;
+const Url = `https://gushwork-assignment-backend.onrender.com`;
 
 const apiRequest = async (method, endpoint, data = {}, isAuthAPI = false) => {
   const url = `${Url}/${endpoint}`;
