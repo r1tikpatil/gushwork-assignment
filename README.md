@@ -82,20 +82,16 @@ Configure the following environment variables:
 **PORT**: Port number for the server (e.g., PORT=8080).
 **JWT_SECRET**: Secret key for JSON Web Token encryption.
 
-        ```
-
+```
 PORT = 8080
 MONGO_URL=your_mongo_db_url
 JWT_SECRET=your_jwt_secret_code
-
 ```
 
 4.Start the development server:
+
 ```
-
 npm start
-
 ```
 
 Hosted Server URL - https://gushwork-assignment-backend.onrender.com
-```
