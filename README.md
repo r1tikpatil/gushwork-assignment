@@ -54,10 +54,10 @@ npm start
 
 4.Access the frontend in your browser at http://localhost:3000.
 
-Features:
-User Authentication: Allows users to sign up, log in, and log out securely.
-Book Reviews: Users can view and add book and also review them reviews.
-Search Functionality: Enables users to search for books by title, author, or genre
+### Features:
+- User Authentication: Allows users to sign up, log in, and log out securely.
+- Book Reviews: Users can view and add book and also review them reviews.
+- Search Functionality: Enables users to search for books by title, author, or genre
 
 ### Backend (BE)
 
@@ -75,16 +75,14 @@ cd ./server
 npm install
 ```
 
-3.Configure environment variables:
-Set up the .env file taking reference to .env.example file.
-Configure the following environment variables:
-**MONGO_URI**: MongoDB URL for database connection.
-**PORT**: Port number for the server (e.g., PORT=8080).
-**JWT_SECRET**: Secret key for JSON Web Token encryption.
+3.Set up the .env file taking reference to .env.example file.
+- **MONGO_URI**: MongoDB URL for database connection.
+- **PORT**: Port number for the server (e.g., PORT=8080).
+- **JWT_SECRET**: Secret key for JSON Web Token encryption.
 
 ```
 PORT = 8080
-MONGO_URL=your_mongo_db_url
+MONGO_URI=your_mongo_db_url
 JWT_SECRET=your_jwt_secret_code
 ```
 
