@@ -63,7 +63,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    const isPasswordValid = bcrypt.compare(password, user.password);
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     if (isPasswordValid) {
       const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
         expiresIn: "1d",

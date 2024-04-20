@@ -1,0 +1,25 @@
+.main-container {
+    // max-width: 1200px;
+    // margin: 0 auto;
+
+    padding: 20px;
+    // padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+//! ---------------Header----------------------
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 70px;
+
+    .btn-cntnr {
+        button {
+            background-color: blue;
+        }
+    }
+}
