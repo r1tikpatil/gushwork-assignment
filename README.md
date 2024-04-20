@@ -2,9 +2,25 @@ Welcome to the Book Reviewer Application!
 
 This project combines both frontend and backend components to create an engaging platform for reviewing books. The frontend leverages React.js for dynamic user interfaces, while the backend, powered by Node.js with Express.js and MongoDB, handles data management and authentication.
 
-To configure it on your local machine, execute the following commands in the main directory after cloning the repository:
+To configure it on your local machine, follow the below steps:
+
+Step 1 - Goto your desired file location and open terminal.
+
+Step 2 - Clone the project here by using the following command
+git clone https://github.com/r1tikpatil/gushwork-assignment
+
+Step 3 - Now change directory from the terminal using the following command
+cd gushwork-assignment/
+
+Step 4 - Open this folder inside a code editor of your choice by using the following command (you can use vs code for it’s extensive features) and make sure to be inside the gushwork-assignment folder
+
+code .
+
+Now follow the below steps to run the project:
 
 ********* Frontend (FE) ***********
+
+Open a terminal
 
 1.Navigate to the frontend directory by using below command:
 cd ./client
